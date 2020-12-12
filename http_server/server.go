@@ -12,7 +12,7 @@ func StartBlog() {
 	// 注册函数
 	r := gin.Default()
 	r.GET("/hankshell", hankShellHandleFunc)
-	r.GET("/hankshell/getFile/:fileName", handleGetFilesFunc)
+	r.GET("/hankshell/getFile", handleGetFilesFunc)
 
 	// 允许http服务
 	err := r.Run()
