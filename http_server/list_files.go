@@ -24,7 +24,7 @@ func createMarkDownFileList(m *markdown.MarkDownData) {
 	m.MarkdownAddEmptyRow()
 
 	for _, v := range blogData.ListBlogFiles() {
-		m.MarkdownHttp(v, fmt.Sprintf("%v/getFile?" + constant.FileParamKey + "=%v", constant.GetURL, v))
+		m.MarkdownHttp(v, fmt.Sprintf("%v/getFile?" + constant.FileParamKey + "=%v", constant.GetURL(), v))
 		m.MarkdownAddEmptyRow()
 	}
 
