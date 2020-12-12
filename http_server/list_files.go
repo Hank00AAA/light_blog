@@ -27,4 +27,6 @@ func createMarkDownFileList(m *markdown.MarkDownData) {
 		m.MarkdownHttp(v, fmt.Sprintf("%v/getFile?" + constant.FileParamKey + "=%v", constant.HankShellURL, v))
 		m.MarkdownAddEmptyRow()
 	}
+
+	m.AddPic("miao", "https://github.com/Hank00AAA/light_blog/blob/main/pic/miao.jpeg?raw=true")
 }

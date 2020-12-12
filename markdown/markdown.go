@@ -37,3 +37,8 @@ func (m *MarkDownData)MarkdownAddTitle(level int, name string) {
 	m.MarkdownAddEmptyRow()
 }
 
+// AddPic
+func (m *MarkDownData)AddPic(name, url string) {
+	m.Data = append(m.Data, []byte(fmt.Sprintf("![%v](%v)", name, url))...)
+	m.MarkdownAddEmptyRow()
+}
