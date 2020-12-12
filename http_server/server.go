@@ -26,7 +26,7 @@ func StartBlog() {
 
 // StartFileServer
 func StartFileServer() {
-	err := http.ListenAndServe(":8080", http.FileServer(http.Dir("./")))
+	err := http.ListenAndServe(":80", http.FileServer(http.Dir("./")))
 	if err != nil {
 		panic(err)
 	}
