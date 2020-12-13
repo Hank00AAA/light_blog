@@ -19,9 +19,7 @@ go build  -o ${svr} ./main/main.go
 nohup ./${svr} &
 
 #更新submodule
-cd hankshell
 git submodule update --init --recursive
-cd ../
 
 # 拉去github项目
 cd webhook
