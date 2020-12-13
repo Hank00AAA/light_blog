@@ -7,8 +7,9 @@ confName="config.toml"
 assertName="static_data"
 
 echo "---webhook start---"
-# 重新编译项目
-git pull
+# 
+git fetch --all
+git reset --hard origin/master
 
 # 重新编译
 go build  -o /usr/local/bin/${svr} ./main/main.go 
