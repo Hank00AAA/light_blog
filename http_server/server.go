@@ -5,7 +5,8 @@ import (
 	"light_blog/constant"
 	"net/http"
 	"os/exec"
-
+	"syscall"
+	"os"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,7 +14,7 @@ import (
 func StartBlog() {
 	// peroidInit
 	//peroidInit()
-
+	
 	// 注册函数
 	r := gin.Default()
 	//r.GET("/", hankShellHandleFunc)
@@ -44,7 +45,7 @@ func (HttpHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 	fmt.Println(url)
 	switch url {
 	case "/webhook":
-		cmd := exec.Command("./webhook/webhook.sh > restart.log")
+		cmd := exec.Command("./webhook/webhook.sh")
 		_, _ = rsp.Write([]byte("start"))
 		out, err := cmd.CombinedOutput()
 		if err != nil {
@@ -52,7 +53,25 @@ func (HttpHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 			return
 		}
 		fmt.Println(string(out))
+		// restart
+		restart()
 	default:
 		http.FileServer(http.Dir("./static_data")).ServeHTTP(rsp, req)
 	}
+}
+
+// restart
+func restart() {
+	binary, err := exec.LookPath("httpServer")
+    if err != nil {
+        panic(err)
+    }
+
+    args := []string{}
+
+    env := os.Environ()
+
+    if err := syscall.Exec(binary, args, env); err != nil {
+        panic(err)
+    }
 }

@@ -10,13 +10,8 @@ echo "---webhook start---"
 # 重新编译项目
 git pull
 
-#清除老进程
-pkill ${svr}
-
-#开启新进程
-pwd
-go build  -o ${svr} ./main/main.go 
-nohup ./${svr} &
+# 重新编译
+go build  -o /usr/local/bin/${svr} ./main/main.go 
 
 #更新submodule
 git submodule update --init --recursive
