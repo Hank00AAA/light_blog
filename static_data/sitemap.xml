@@ -3,26 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://hank-shell.com/english/</loc>
-    <lastmod>2020-12-12T20:28:30+08:00</lastmod>
+    <loc>http://127.0.0.1:8080/notes/typora/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/english/finish/</loc>
-    <lastmod>2020-12-12T20:28:30+08:00</lastmod>
+    <loc>http://127.0.0.1:8080/categories/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/</loc>
-    <lastmod>2020-12-12T20:28:30+08:00</lastmod>
+    <loc>http://127.0.0.1:8080/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/categories/</loc>
+    <loc>http://127.0.0.1:8080/notes/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/tags/</loc>
+    <loc>http://127.0.0.1:8080/tags/</loc>
   </url>
   
 </urlset>
