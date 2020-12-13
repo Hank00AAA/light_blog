@@ -3,23 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://hank-shell.com/notes/typora/</loc>
+    <loc>http://127.0.0.1:8080/notes/typora/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/categories/</loc>
+    <loc>http://127.0.0.1:8080/categories/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/</loc>
+    <loc>http://127.0.0.1:8080/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/notes/</loc>
+    <loc>http://127.0.0.1:8080/notes/</loc>
   </url>
   
   <url>
-    <loc>http://hank-shell.com/tags/</loc>
+    <loc>http://127.0.0.1:8080/tags/</loc>
   </url>
   
 </urlset>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hankshell</title>
-    <link>http://hank-shell.com/</link>
-    <description>Recent content on hankshell</description>
+    <title>hank-shell</title>
+    <link>http://127.0.0.1:8080/</link>
+    <description>Recent content on hank-shell</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://hank-shell.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="http://127.0.0.1:8080/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://hank-shell.com/notes/typora/</link>
+      <link>http://127.0.0.1:8080/notes/typora/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://hank-shell.com/notes/typora/</guid>
+      <guid>http://127.0.0.1:8080/notes/typora/</guid>
       <description>First Time To User Typora </description>
     </item>
     

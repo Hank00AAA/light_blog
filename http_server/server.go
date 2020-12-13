@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"light_blog/constant"
 	"net/http"
-	"os"
+	"os/exec"
 
 	"github.com/gin-gonic/gin"
 )
@@ -29,7 +29,7 @@ func StartBlog() {
 
 // StartFileServer
 func StartFileServer() {
-	err := http.ListenAndServe(":80", HttpHandler{})
+	err := http.ListenAndServe(":8080", HttpHandler{})
 	if err != nil {
 		panic(err)
 	}
@@ -44,23 +44,14 @@ func (HttpHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 	fmt.Println(url)
 	switch url {
 	case "/webhook":
-		attr := new(os.ProcAttr)
-		newProcess, err := os.StartProcess("./webhook/webhook.sh", nil, attr)
+		cmd := exec.Command("./webhook/webhook.sh")
+		_, _ := rsp.Write([]byte("start"))
+		out, err := cmd.CombinedOutput()
 		if err != nil {
-			fmt.Println(err)
-			_, _ = rsp.Write([]byte(err.Error()))
+			fmt.Println("Err:%v", err)
 			return
 		}
-		fmt.Println("Process PID", newProcess.Pid)
-		processState, err := newProcess.Wait() //等待命令执行完
-		if err != nil {
-			fmt.Println(err)
-			_, _ = rsp.Write([]byte("webhook err!"))
-			return
-		}
-		fmt.Println("processState PID:", processState.Pid()) //获取PID
-		fmt.Println("ProcessExit:", processState.Exited())   //获取进程是否退出
-		_, _ = rsp.Write([]byte("webhook finish!"))
+		fmt.Println(string(out))
 	default:
 		http.FileServer(http.Dir("./static_data")).ServeHTTP(rsp, req)
 	}
