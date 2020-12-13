@@ -11,6 +11,9 @@ echo "---webhook start---"
 git fetch --all
 git reset --hard origin/master
 
+# 删除submodule
+rm -rf ../hankshell/content/*.md
+
 # 重新编译
 go build  -o /usr/local/bin/${svr} ./main/main.go 
 
