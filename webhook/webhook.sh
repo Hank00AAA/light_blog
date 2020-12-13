@@ -11,7 +11,7 @@ echo "---webhook start---"
 git pull
 
 # 删除submodule
-rm -rf ../hankshell/content/*.md
+rm -rf ./hankshell/content/*.md
 
 # 重新编译
 go build  -o /usr/local/bin/${svr} ./main/main.go 
