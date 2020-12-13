@@ -20,7 +20,7 @@ nohup ./${svr} &
 
 #更新submodule
 cd hankshell
-git submodule update
+git submodule update --init --recursive
 cd ../
 
 # 拉去github项目
