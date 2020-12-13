@@ -17,9 +17,14 @@ pkill ${svr}
 pwd
 go build  -o ${svr} ./main/main.go 
 nohup ./${svr} &
-cd webhook
+
+#更新submodule
+cd hankshell
+git submodule update
+cd ../
 
 # 拉去github项目
+cd webhook
 rm -rf Note
 git clone https://github.com/Hank00AAA/Note.git
 rm -rf hankshell/content/notes
