@@ -8,8 +8,7 @@ assertName="static_data"
 
 echo "---webhook start---"
 # 
-git fetch --all
-git reset --hard origin/master
+git pull
 
 # 删除submodule
 rm -rf ../hankshell/content/*.md
