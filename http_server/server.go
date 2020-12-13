@@ -45,7 +45,7 @@ func (HttpHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 	switch url {
 	case "/webhook":
 		cmd := exec.Command("./webhook/webhook.sh")
-		_, _ := rsp.Write([]byte("start"))
+		_, _ = rsp.Write([]byte("start"))
 		out, err := cmd.CombinedOutput()
 		if err != nil {
 			fmt.Println("Err:%v", err)
