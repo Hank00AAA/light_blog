@@ -62,12 +62,12 @@ func (HttpHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 
 // restart
 func restart() {
-	binary, err := exec.LookPath("httpServer")
+	binary, err := exec.LookPath("nohup")
     if err != nil {
         panic(err)
     }
 
-    args := []string{}
+    args := []string{"httpServer", "&"}
 
     env := os.Environ()
 
