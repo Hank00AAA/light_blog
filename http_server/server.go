@@ -2,19 +2,19 @@ package http_server
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"light_blog/constant"
 	"net/http"
+	"os"
 	"os/exec"
 	"syscall"
-	"os"
-	"github.com/gin-gonic/gin"
 )
 
 // StartBlog
 func StartBlog() {
 	// peroidInit
 	//peroidInit()
-	
+
 	// 注册函数
 	r := gin.Default()
 	//r.GET("/", hankShellHandleFunc)
@@ -62,16 +62,16 @@ func (HttpHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 
 // restart
 func restart() {
-	binary, err := exec.LookPath("nohup")
-    if err != nil {
-        panic(err)
-    }
+	binary, err := exec.LookPath("httpServer")
+	if err != nil {
+		panic(err)
+	}
 
-    args := []string{"httpServer"}
+	args := []string{"httpServer"}
 
-    env := os.Environ()
+	env := os.Environ()
 
-    if err := syscall.Exec(binary, args, env); err != nil {
-        panic(err)
-    }
+	if err := syscall.Exec(binary, args, env); err != nil {
+		panic(err)
+	}
 }
