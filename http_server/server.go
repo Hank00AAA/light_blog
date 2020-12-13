@@ -67,7 +67,7 @@ func restart() {
         panic(err)
     }
 
-    args := []string{"httpServer", "&"}
+    args := []string{"httpServer"}
 
     env := os.Environ()
 
