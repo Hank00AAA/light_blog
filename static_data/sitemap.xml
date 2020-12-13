@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://127.0.0.1:8080/notes/test/</loc>
+  </url>
+  
+  <url>
     <loc>http://127.0.0.1:8080/notes/typora/</loc>
   </url>
   
