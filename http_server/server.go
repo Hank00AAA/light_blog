@@ -2,10 +2,11 @@ package http_server
 
 import (
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"light_blog/constant"
 	"net/http"
 	"os"
+
+	"github.com/gin-gonic/gin"
 )
 
 // StartBlog
@@ -16,7 +17,7 @@ func StartBlog() {
 	// 注册函数
 	r := gin.Default()
 	//r.GET("/", hankShellHandleFunc)
-	r.Any("/:" + constant.FileParamKey, hankShellHandleFunc)
+	r.Any("/:"+constant.FileParamKey, hankShellHandleFunc)
 	//r.GET("/hankshell/getFile", handleGetFilesFunc)
 
 	// 允许http服务
@@ -28,7 +29,7 @@ func StartBlog() {
 
 // StartFileServer
 func StartFileServer() {
-	err := http.ListenAndServe(":8080", HttpHandler{})
+	err := http.ListenAndServe(":80", HttpHandler{})
 	if err != nil {
 		panic(err)
 	}
@@ -36,10 +37,9 @@ func StartFileServer() {
 
 // httpHandler
 type HttpHandler struct {
-
 }
 
-func (HttpHandler)ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
+func (HttpHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 	url := req.URL.String()
 	fmt.Println(url)
 	switch url {
@@ -58,8 +58,8 @@ func (HttpHandler)ServeHTTP(rsp http.ResponseWriter, req *http.Request) {
 			_, _ = rsp.Write([]byte("webhook err!"))
 			return
 		}
-		fmt.Println("processState PID:", processState.Pid())//获取PID
-		fmt.Println("ProcessExit:", processState.Exited())//获取进程是否退出
+		fmt.Println("processState PID:", processState.Pid()) //获取PID
+		fmt.Println("ProcessExit:", processState.Exited())   //获取进程是否退出
 		_, _ = rsp.Write([]byte("webhook finish!"))
 	default:
 		http.FileServer(http.Dir("./static_data")).ServeHTTP(rsp, req)
