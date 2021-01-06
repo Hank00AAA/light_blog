@@ -65,7 +65,7 @@ func StartFileServer(ln net.Listener) {
 		time.Sleep(time.Second)
 		curLink := GetSingleTon().GetLinkNum()
 		if curLink == 0 {
-			fmt.Println("Old Process exit pid:%v", GetSingleTon().GetPID())
+			fmt.Println("Old Process exit pid:", GetSingleTon().GetPID())
 			os.Exit(0)
 		}
 	}
@@ -135,7 +135,7 @@ func forkChildProcess() {
 	}
 
 	path := os.Args[0]
-	fmt.Println("Path:%v", path)
+	fmt.Println("Path:", path)
 	envList := []string{}
 	for _, v := range os.Environ() {
 		envList = append(envList, v)
