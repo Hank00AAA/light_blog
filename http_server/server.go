@@ -65,7 +65,7 @@ func StartFileServer(ln net.Listener) {
 		time.Sleep(time.Second)
 		curLink := GetSingleTon().GetLinkNum()
 		if curLink == 0 {
-			fmt.Println("Old Process exit pid:", GetSingleTon().GetPID())
+			fmt.Println("Old Process exit cur pid:", GetSingleTon().GetPID())
 			os.Exit(0)
 		}
 	}
