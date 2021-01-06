@@ -135,6 +135,7 @@ func forkChildProcess() {
 	}
 
 	path := os.Args[0]
+	fmt.Println("Path:%v", path)
 	envList := []string{}
 	for _, v := range os.Environ() {
 		envList = append(envList, v)
