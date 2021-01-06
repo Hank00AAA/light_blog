@@ -3,11 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://127.0.0.1:8080/notes/test/</loc>
+    <loc>http://127.0.0.1:8080/notes/%E4%BF%9D%E9%99%A9/</loc>
   </url>
   
   <url>
-    <loc>http://127.0.0.1:8080/notes/typora/</loc>
+    <loc>http://127.0.0.1:8080/notes/%E5%8D%9A%E5%AE%A2%E7%94%B1%E6%9D%A5/</loc>
+  </url>
+  
+  <url>
+    <loc>http://127.0.0.1:8080/notes/%E8%B5%84%E4%BA%A7%E9%85%8D%E7%BD%AE/</loc>
   </url>
   
   <url>

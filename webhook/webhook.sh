@@ -14,7 +14,8 @@ git pull
 rm  ./hankshell/content/notes/*
 
 # 重新编译
-go build  -o /usr/local/bin/${svr} ./main/main.go 
+rm -f /usr/local/bin/${svr}
+go build  -o /usr/local/bin/${svr} ./main/main.go
 
 #更新submodule
 git submodule update --init --recursive
