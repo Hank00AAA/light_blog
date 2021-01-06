@@ -35,7 +35,7 @@ func StartBlog() {
 func StartFileServer(ln net.Listener) {
 	var err error
 	if ln == nil {
-		l, err := net.Listen("tcp", ":6333")
+		l, err := net.Listen("tcp", ":80")
 		if err != nil {
 			panic(err)
 		}
